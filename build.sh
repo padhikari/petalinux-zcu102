@@ -8,7 +8,8 @@ PRJ_DIR=$PRJ/xilinx-zcu102-v2019.1
 
 cd $PRJ_DIR
 
-petalinux-build
+#petalinux-config --get-hw-description=../hdf/
 
+petalinux-build
 
 cd $PRJ
