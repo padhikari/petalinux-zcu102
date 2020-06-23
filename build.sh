@@ -1,15 +1,23 @@
 #!/bin/bash 
 
 PRJ=$(pwd)
+PRJ_NAME=pabitra-zcu102-petalinux-project 
+MACHINE=zynqMP
 
-#petalinux-create -t project -s xilinx-zcu102-v2019.1-final.bsp
 
-PRJ_DIR=$PRJ/xilinx-zcu102-v2019.1
+if [ $PETALINUX_VER != "2019.1" ]; then 
+    echo "petalinux mismatch "
+    exit -1
+fi 
 
-cd $PRJ_DIR
+# create a project based on zcu102 
+#petalinux-create  -t project -s  bsp/xilinx-zcu102-v2019.1-final.bsp --template $MACHINE --name $PRJ_NAME 
 
-#petalinux-config --get-hw-description=../hdf/
+cd $PRJ_NAME
+
+# get hardware description file 
+#petalinux-config --get-hw-description=../hdf 
 
 petalinux-build
-
 cd $PRJ
+
