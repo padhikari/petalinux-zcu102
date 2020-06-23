@@ -18,6 +18,15 @@ cd $PRJ_NAME
 # get hardware description file 
 #petalinux-config --get-hw-description=../hdf 
 
-petalinux-build
+#build the image
+#petalinux-build
+
+#Generate Boot Image
+petalinux-package --boot --format BIN \ 
+    --fsbl images/linux/zynqmp_fsbl.elf \
+    --u-boot images/linux/u-boot.elf \
+    --pmufw images/linux/pmufw.elf \
+    --fpga images/linux/*.bit \
+--force
 cd $PRJ
 
