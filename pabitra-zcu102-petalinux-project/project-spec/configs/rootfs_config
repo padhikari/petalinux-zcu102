@@ -4192,11 +4192,13 @@ CONFIG_imagefeature-hwcodecs=y
 # apps 
 #
 # CONFIG_gpio-demo is not set
+CONFIG_myapp=y
 # CONFIG_peekpoke is not set
 
 #
 # user packages 
 #
+# CONFIG_iperf3 is not set
 
 #
 # PetaLinux RootFS Settings

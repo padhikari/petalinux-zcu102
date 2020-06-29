@@ -19,14 +19,10 @@ cd $PRJ_NAME
 #petalinux-config --get-hw-description=../hdf 
 
 #build the image
-#petalinux-build
+petalinux-build
 
 #Generate Boot Image
-petalinux-package --boot --format BIN \ 
-    --fsbl images/linux/zynqmp_fsbl.elf \
-    --u-boot images/linux/u-boot.elf \
-    --pmufw images/linux/pmufw.elf \
-    --fpga images/linux/*.bit \
---force
+#petalinux-package --boot --format BIN --fsbl images/linux/zynqmp_fsbl.elf --u-boot images/linux/u-boot.elf  --pmufw images/linux/pmufw.elf --fpga images/linux/*.bit --force
+
 cd $PRJ
 
